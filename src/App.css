@@ -1,0 +1,160 @@
+/* Global styles for the main app */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 25%, #cbd5e1 50%, #94a3b8 75%, #64748b 100%);
+  background-attachment: fixed;
+  color: #1e293b;
+  min-height: 100vh;
+}
+
+/* Animated background particles */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle at 20% 80%, rgba(100, 116, 139, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(148, 163, 184, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(203, 213, 225, 0.03) 0%, transparent 50%);
+  animation: backgroundShift 20s ease-in-out infinite;
+  z-index: -1;
+}
+
+@keyframes backgroundShift {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
+
+/* Music note floating animation */
+.music-note {
+  position: fixed;
+  color: rgba(100, 116, 139, 0.2);
+  font-size: 1.5rem;
+  animation: float 6s ease-in-out infinite;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.music-note:nth-child(1) { top: 10%; left: 10%; animation-delay: 0s; }
+.music-note:nth-child(2) { top: 20%; right: 15%; animation-delay: 1s; }
+.music-note:nth-child(3) { bottom: 30%; left: 20%; animation-delay: 2s; }
+.music-note:nth-child(4) { bottom: 20%; right: 10%; animation-delay: 3s; }
+.music-note:nth-child(5) { top: 50%; left: 5%; animation-delay: 4s; }
+.music-note:nth-child(6) { top: 60%; right: 5%; animation-delay: 5s; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(180deg); }
+}
+
+/* Glass morphism effect */
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 4px 16px 0 rgba(100, 116, 139, 0.1);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(55, 65, 81, 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #64748b, #475569);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, #475569, #334155);
+}
+
+/* Focus styles */
+*:focus {
+  outline: 2px solid #64748b;
+  outline-offset: 2px;
+}
+
+/* Button hover effects */
+button {
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+button:hover::before {
+  left: 100%;
+}
+
+/* Input focus effects */
+input:focus,
+select:focus {
+  box-shadow: 0 0 0 3px rgba(100, 116, 139, 0.2);
+  transform: translateY(-1px);
+}
+
+/* Loading animation */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+/* Pulse animation for interactive elements */
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+/* Gradient text effect */
+.gradient-text {
+  background: linear-gradient(45deg, #475569, #64748b, #94a3b8, #475569);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 4s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
