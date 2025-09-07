@@ -1,5 +1,5 @@
 import { importShared } from './__federation_fn_import-gVVR6EuA.js';
-import MusicLibrary, { j as jsxRuntimeExports } from './__federation_expose_MusicLibrary-D8nOdDpY.js';
+import MusicLibrary, { j as jsxRuntimeExports } from './__federation_expose_MusicLibrary-BORKvJ_j.js';
 import { r as reactDomExports } from './index-D9Af7wOI.js';
 
 true&&(function polyfill() {
