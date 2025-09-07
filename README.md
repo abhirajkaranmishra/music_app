@@ -51,8 +51,12 @@
    # Deployed on Vercel
 
     1. Push your code to GitHub
-    2. Connect your repo to "vercel.com"
-    3. Vercel will auto-deploy
+    2. Sing In to vercel via github account
+    3. Import repository to vercel
+    4. Click on deploy
+    5. Vercel will auto-deploy
+
+    ## For frontend microservice change root directory to /music-library
 
 
 
